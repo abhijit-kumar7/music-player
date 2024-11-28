@@ -124,3 +124,11 @@ folderInput.addEventListener('change', function (event) {
   })
 
 });
+
+const rotatingImage = document.querySelector('.rotating-image');
+let speed =  4;// Default speed in seconds
+
+function changeSpeed(newSpeed) {
+    speed = newSpeed;
+    rotatingImage.style.animationDuration = `${speed}s`;
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rotating Circular Image</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .rotating-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            animation: rotate infinite linear 4s;
+        }
+
+        .rotating-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Animation for rotation */
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="rotating-image">
+            <img src="assets/images/music-pic.jpg" alt="Rotating Image" />
+        </div>
+    </div>
+    <script>
+        // JavaScript to control the animation speed dynamically if needed
+        const rotatingImage = document.querySelector('.rotating-image');
+        let speed = 4; // Default speed in seconds
+
+        function changeSpeed(newSpeed) {
+            speed = newSpeed;
+            rotatingImage.style.animationDuration = `${speed}s`;
+        }
+
+        // Example: Call changeSpeed(2) in the browser console to set speed to 2 seconds.
+    </script>
+</body>
+</html>
